@@ -36,13 +36,13 @@ public class ListaNumeros
      * 
      * asumimos que numero es >= 0 (no hay que comprobarlo)
      */
-    public boolean addElemento(int[ ] numero)
+    public boolean addElemento(int numero)
     {
        boolean encontrado = false; 
        int i= 0;
-       while(i < numero.length && ! encontrado)
+       while(i < numero && ! encontrado)
        {
-       if (numero[i] > 0 ) 
+       if (numero > 0 ) 
        {
            return true;
        }  
@@ -70,7 +70,7 @@ public class ListaNumeros
      int[] vacio; 
      for(int i = 0; i < numeros.length; i++ )
      {
-        vacio[i] = 0;
+        vacio.length[i] = 0;
      } 
      return true;
     }
@@ -130,7 +130,7 @@ public class ListaNumeros
     public String toString() 
     {
         
-        return null;
+        return "TAM_LISTA" + TAM_LISTA + "\nNumeros" + numeros + "\nPos" + pos;
     }
 
     /**
@@ -153,10 +153,14 @@ public class ListaNumeros
      *  se devuelve: {8, 8, 8, 2, 2, 2, 2, 1, 1, 1, 1, 1}
      * (ver detalles en el enunciado)
      */
-    public int[] expandir() {
-         
-
-        return null;
+    public int[] expandir(int[] valor) {
+        int [] contador = new int[valor.length];
+        for(int i = 0; i < valor.length; i++)
+        {
+            contador[i] = valor[i];
+        } 
+        
+        return contador;
     }
 
     /**
@@ -189,9 +193,10 @@ public class ListaNumeros
      *  Crea y devuelve un nuevo objeto ListaNumeros 
      *  que incluya los elementos del array ordenado
      */
-    public ListaNumeros nuevaLista() {
-         
-        return null;
+    public ListaNumeros nuevaLista(int[] copia) {
+        int[] copia = new int [numeros.length];
+        System.arraycopy(numeros,0,copia,0,numeros.length);
+        return copia;
 
     }
 
