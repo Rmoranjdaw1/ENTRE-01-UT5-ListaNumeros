@@ -26,7 +26,7 @@ public class ListaNumeros
         if (n > TAM_LISTA) {
             throw new IllegalArgumentException("Valor no permitido para tamaño lista");
         }
-        // completar
+        pos = 0;
     }
 
     /**
@@ -36,56 +36,88 @@ public class ListaNumeros
      * 
      * asumimos que numero es >= 0 (no hay que comprobarlo)
      */
-    public boolean addElemento(int numero)
+    public boolean addElemento(int[ ] numero)
     {
-        
-        return true;
-
+       boolean encontrado = false; 
+       int i= 0;
+       while(i < numero.length && ! encontrado)
+       {
+       if (numero[i] > 0 ) 
+       {
+           return true;
+       }  
+       else
+       {
+           i++;
+       }
+       }
+       return false;
     }
 
     /**
      * devuelve true si numeros está completo, false en otro caso Hazlo sin if
      */
-    public boolean estaCompleta()
+    public boolean estaCompleta(int numeros)
     {
-        return true;
-
+        return numeros == 0 || numeros  == 0;
     }
 
     /**
      * devuelve true si la lista está vacía, false en otro caso. Hazlo sin if
      */
-    public boolean estaVacia() 
+    public boolean estaVacia(int[ ] numeros) 
     {
-        return true;
-
+     int[] vacio; 
+     for(int i = 0; i < numeros.length; i++ )
+     {
+        vacio[i] = 0;
+     } 
+     return true;
     }
 
     /**
      * devuelve el nº de elementos realmente guardados en la lista
      */
-    public int getTotalNumeros()
+    public int getTotalNumeros(int[] totalNumeros)
     {
-        return 0;
-
+        int[] guardados = new int[numeros.length];
+        for(int i=  0; i < totalNumeros.length;i++){
+            guardados[i] = numeros[i];
+        }
+        
     }
 
     /**
      * Vacía la lista
      */
-    public void vaciarLista() 
+    public void vaciarLista(int[ ] vaciar) 
     {
-        
+        int[] lista = new int[vaciar.length];
+        for(int i = 0; i < vaciar.length; i++)
+        {
+            vaciar[i] = 0;
+        }
     }
 
     /**
      * @param numero el valor a buscar
      * @return true si se encuentra, false en otro caso
      */
-    public boolean estaElemento(int numero) 
+    public boolean estaElemento(int[] numero) 
     {
+        boolean encontrado = false;
+        int i = 0;
+        int buscado;
+        while (i < numero.length && ! encontrado)
+        {
+            if(numero[i] == buscado) 
+            {
+                encontrado = true;
+            }
         
-        return false;
+        }
+           
+        return encontrado;
     }
 
     /**
