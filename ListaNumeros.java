@@ -65,12 +65,12 @@ public class ListaNumeros
     /**
      * devuelve true si la lista está vacía, false en otro caso. Hazlo sin if
      */
-    public boolean estaVacia(int[ ] numeros) 
+    public boolean estaVacia(int numeros) 
     {
-     int[] vacio; 
-     for(int i = 0; i < numeros.length; i++ )
+     int vacio; 
+     for(int i = 0; i < numeros; i++ )
      {
-        vacio.length[i] = 0;
+        vacio = 0;
      } 
      return true;
     }
@@ -78,11 +78,12 @@ public class ListaNumeros
     /**
      * devuelve el nº de elementos realmente guardados en la lista
      */
-    public int getTotalNumeros(int[] totalNumeros)
+    public int getTotalNumeros(int totalNumeros)
     {
-        int[] guardados = new int[numeros.length];
-        for(int i=  0; i < totalNumeros.length;i++){
-            guardados[i] = numeros[i];
+        int guardados; 
+        int numeros;
+        for(int i=  0; i < totalNumeros;i++){
+            guardados = numeros;
         }
         
     }
@@ -90,12 +91,13 @@ public class ListaNumeros
     /**
      * Vacía la lista
      */
-    public void vaciarLista(int[ ] vaciar) 
+    public void vaciarLista(int vaciar) 
     {
-        int[] lista = new int[vaciar.length];
-        for(int i = 0; i < vaciar.length; i++)
+        int lista;
+        
+        for(int i = 0; i < vaciar; i++)
         {
-            vaciar[i] = 0;
+            vaciar = 0;
         }
     }
 
@@ -103,14 +105,14 @@ public class ListaNumeros
      * @param numero el valor a buscar
      * @return true si se encuentra, false en otro caso
      */
-    public boolean estaElemento(int[] numero) 
+    public boolean estaElemento(int numero) 
     {
         boolean encontrado = false;
         int i = 0;
         int buscado;
-        while (i < numero.length && ! encontrado)
+        while (i < numero && ! encontrado)
         {
-            if(numero[i] == buscado) 
+            if(numero == buscado) 
             {
                 encontrado = true;
             }
@@ -193,10 +195,10 @@ public class ListaNumeros
      *  Crea y devuelve un nuevo objeto ListaNumeros 
      *  que incluya los elementos del array ordenado
      */
-    public ListaNumeros nuevaLista(int[] copia) {
+    public ListaNumeros nuevaLista(int[] numeros) {
         int[] copia = new int [numeros.length];
         System.arraycopy(numeros,0,copia,0,numeros.length);
-        return copia;
+        return null;
 
     }
 
